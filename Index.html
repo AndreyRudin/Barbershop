@@ -34,7 +34,7 @@ class
 РАЗМЕТКА 
 декоративные элементы не должны находится в разметке, только содержательные
 использовать пространство имен class = beard-title или clas = beard у родителя, у дочернего элемента class=title -->
-ДОСТУПНОСТЬ 4
+<!-- ДОСТУПНОСТЬ 4
 можно передвигаться по сайту с помощью клавиш tab shift+tab space enter.
 для интерактивных элементов(кнопки) можно задать псевдокласс hover(наведение мышкой), focus(наведение мышкой). 
 класс active для всех элементов и для div 
@@ -47,7 +47,7 @@ label можно привязать по id к другому элементу
 Input type=range слайдер type=search 
 Тэг details и вложенный в него summary выпадающий список 
 Для input list=elements, тэг datalist id = elements в нем тег option value="красный" и т.д.
-Тэг aria-label указать описание элемента для скринридера
+Тэг aria-label указать описание элемента для скринридера -->
 <!DOCTYPE HTML>
 <html lang ="ru">
 	<head>
@@ -71,7 +71,7 @@ Input type=range слайдер type=search
 					<li><a href="contacts.html">Контакты</a></li>
 				</ul>
 				<ul class = "user-navigation">
-					<li class = "login-link">Вход</li>
+					<a class="login-link" href="login.html">Вход</a>
 				</ul>
 			</nav>        
 		</header>
@@ -114,8 +114,8 @@ Input type=range слайдер type=search
 				<figure>
 					<a href="#"><img src="img/studio.jpg" width="286" height="164" alt="Интерьер"></a>
 				</figure>
-				<span class = "button gallery-button gallery-button-back">Назад</span>
-				<span class = "button gallery-button gallery-button-next">Вперед</span>
+				<button class = "button gallery-button gallery-button-back" type="button">Назад</button>
+				<button class = "button gallery-button gallery-button-next" type="button">Вперед</button>
 			</section>
 			<section class = "contacts">
 				<h2>Контактная информация</h2>
@@ -137,8 +137,31 @@ Input type=range слайдер type=search
 				<p class="appointment-info">
 					Укажите желаемую дату и время и мы свяжемся с вами для подтверждения брони
 				</p>
-				<!-- Здесь будет форма -->
-
+				<form class="appointment-form" action="https://echo.ru" method="post">
+					<p class="appointment-item">
+						<label>
+							Дата
+							<input type="date" name="date" value="" placeholder="08.10.2017">
+						</label>
+					</p>
+					<p class="appointment-item">
+						<label>
+							Время
+							<input type="text" name="time" value="" placeholder="10:00">
+					</p>
+					<p class="appointment-item">
+						<label>
+							Ваше имя
+							<input type="text" name="name" value="" placeholder="Борода">
+						</label>
+					</p>
+					<p class="appointment-item">
+						<label>
+							Телефон
+							<input type="tel" name="phone" value="" placeholder="+ 7 123 456-78-90">
+						</label>
+					</p>
+				</form>
 			</section>
 		</main>
 		<footer class = "main-footer">
