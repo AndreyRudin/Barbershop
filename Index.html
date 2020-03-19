@@ -48,6 +48,8 @@ Input type=range слайдер type=search
 Тэг details и вложенный в него summary выпадающий список 
 Для input list=elements, тэг datalist id = elements в нем тег option value="красный" и т.д.
 Тэг aria-label указать описание элемента для скринридера -->
+<!-- Есть атрибут hidden, он равносилен display=none
+Инспектор доступности в гугл хроме использовать -->
 <!DOCTYPE HTML>
 <html lang ="ru">
 	<head>
@@ -76,7 +78,7 @@ Input type=range слайдер type=search
 			</nav>        
 		</header>
 		<main class = "container"> <!-- main это контент между шапкой и подвалом, только один на странице,чтобы сделать центровку через CSS-->
-			<h1 class = "visualy-hidden">Барбершоп «Бородинский»</h1>	
+			<h1 class = "visually-hidden">Барбершоп «Бородинский»</h1>	
 
 			<section class = "features">
 				<h2 class = "visualy-hidden">Преимущества</h2>
@@ -146,7 +148,7 @@ Input type=range слайдер type=search
 					</p>
 					<p class="appointment-item">
 						<label>
-							Времечко
+							Время
 							<input type="text" name="time" value="" placeholder="10:00">
 					</p>
 					<p class="appointment-item">
@@ -161,6 +163,7 @@ Input type=range слайдер type=search
 							<input type="tel" name="phone" value="" placeholder="+ 7 123 456-78-90">
 						</label>
 					</p>
+					<button class="button" type="submit">Отправить</button>
 				</form>
 			</section>
 		</main>
@@ -187,13 +190,34 @@ Input type=range слайдер type=search
 		<section class = "modal modal-login">
 			<h2>Личный кабинет</h2>
 			<p>Введите свой логин и пароль.</p>
-			<!-- Здесь будет форма -->
-
-			<span class = "modal-close">x</span>
+			<form class="login-form" action="http://echo.ru" method="post">
+				<p>
+					<label class="visually-hidden" for="user-login">Логин</label>
+					<input id="user-login" type="text" name="login" class="login-icon-user" placeholder="Логин">
+				</p>
+				<p>
+					<label class="visually-hidden" for="user-password">Пароль</label>
+					<input id="user-password" type="password" name="password" class="login-icon-password" placeholder="Пароль">
+				</p>
+				<p class="login-password-info">
+					<label class="login-checkbox">
+						<input type="checkbox" name="remember" class="visually-hidden" id="login-password-info">
+						<span class="checkbox-indicatoe"></span>
+						Запомните меня
+					</label>
+					<a href="#" class="restore">Я забыл пароль</a>
+				</p>
+				<button class="button" type="submit">Войти</button>
+			</form>
+			<button class = "modal-close" type="button">Закрыть</button>
 		</section>
+
 		<section>
-			<h2 class = "visualy-hidden">Как до нас добраться</h2>
-			<span class = "modal-close">x</span>
+			<h2 class = "visually-hidden">Как до нас добраться</h2>
+			<p>
+				<img src="img/map.jpg" width="780" height="560" alt="Офис нашей компании находится по адресу ул.Большая Конюшенная 19/8, Санкт-Петербург">
+			</p>
+			<button class = "modal-close" type="button">Закрыть</button>
 		</section>
 	</body>
 </html>
